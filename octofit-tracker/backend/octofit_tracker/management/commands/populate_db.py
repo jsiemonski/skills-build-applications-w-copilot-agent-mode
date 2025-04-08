@@ -12,7 +12,7 @@ class Command(BaseCommand):
         # Create test teams
         team1 = Team.objects.create(name="Team Alpha")
         # Manually add members to the team
-        team1.members.set([user1, user2])  # Use .set() instead of .add()
+        team1.members.set([user1, user2])  # Use .set() to add members
 
         # Create test activities
         Activity.objects.create(user=user1, activity_type="Running", duration=30)
@@ -26,4 +26,5 @@ class Command(BaseCommand):
         Workout.objects.create(name="Morning Yoga", description="A relaxing yoga session to start the day.")
         Workout.objects.create(name="HIIT", description="High-intensity interval training for fat burning.")
 
+        # Print success message
         self.stdout.write(self.style.SUCCESS('Successfully populated the database with test data'))
