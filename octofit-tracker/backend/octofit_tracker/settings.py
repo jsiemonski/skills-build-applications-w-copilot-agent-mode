@@ -86,6 +86,7 @@ DATABASES = {
         'NAME': 'octofit_db',  # MongoDB database name
     }
 }
+
 ALLOWED_HOSTS = ['*']
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

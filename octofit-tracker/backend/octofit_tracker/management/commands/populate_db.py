@@ -11,7 +11,8 @@ class Command(BaseCommand):
 
         # Create test teams
         team1 = Team.objects.create(name="Team Alpha")
-        team1.members.add(user1, user2)
+        # Manually add members to the team
+        team1.members.set([user1, user2])  # Use .set() instead of .add()
 
         # Create test activities
         Activity.objects.create(user=user1, activity_type="Running", duration=30)
